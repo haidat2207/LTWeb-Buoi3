@@ -7,8 +7,9 @@ import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 
+import murach.business.Survey;
 import murach.business.User;
-//import murach.data.UserDB;
+
 
 @WebServlet("/survey")
 public class SurveyServlet extends HttpServlet {
@@ -33,14 +34,17 @@ public class SurveyServlet extends HttpServlet {
                     request.getParameter("firstName"),
                     request.getParameter("lastName"),
                     request.getParameter("email"),
-                    request.getParameter("dateOfBirth"),
+                    request.getParameter("dateOfBirth"));
+
+            Survey survey = new Survey(
+                    user,
                     request.getParameter("hearAboutUs"),
                     request.getParameterValues("announcement"),
                     request.getParameter("contactBy"));
 
 //    UserDB.insert(user);
 
-            request.setAttribute("user", user);
+            request.setAttribute("survey", survey);
             url = "/thanks.jsp";
         }
 
