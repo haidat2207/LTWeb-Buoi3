@@ -6,7 +6,9 @@
     <link rel="stylesheet" href="styles/main.css" type="text/css">
 </head>
 <body>
-<img src="image/murach.png" alt="Murach logo" width="100">
+<div class="logo">
+    <img src="image/murach.png" alt="Murach logo" width="100">
+</div>
 <h1>Survey</h1>
 <p>If you have a moment, we'd appreciate it if you would fill out this survey.</p>
 
@@ -25,7 +27,7 @@
     <input type="text" id="email" name="email" required><br>
 
     <label for="dateOfBirth">Date of Birth</label>
-    <input type="text" id="dateOfBirth" name="dateOfBirth" required><br>
+    <input type="date" id="dateOfBirth" name="dateOfBirth" required><br>
 
     <h2>How did you hear about us?</h2>
     <input type="radio" name="hearAboutUs" value="Search engine" checked required> Search engine
@@ -34,8 +36,8 @@
     <input type="radio" name="hearAboutUs" value="Other"> Other
 
     <h2>Would you like to receive announcements about new CDs and special offers?</h2>
-    <input type="checkbox" name="announcement" value="YES, I'd like that"> YES, I'd like that.<br>
-    <input type="checkbox" name="announcement" value="YES, please send me email announcements"> YES, please send me email announcements.<br>
+    <input type="checkbox" name="announcement" value="New CDs"> YES, I'd like that.<br>
+    <input type="checkbox" name="announcement" value="Special offers by email"> YES, please send me email announcements.<br>
 
     Please contact me by:
     <select id="contactBy" name="contactBy">

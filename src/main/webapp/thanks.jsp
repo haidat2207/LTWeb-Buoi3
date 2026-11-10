@@ -19,16 +19,16 @@
     <label>Email:</label>
     <span>${user.email}</span><br>
     <label>Date of Birth:</label>
-    <span>${dateOfBirth}</span><br>
+    <span>${user.dateOfBirth}</span><br>
     <label>Heard From:</label>
-    <span>${hearAboutUs}</span><br>
+    <span>${user.hearAboutUs}</span><br>
 
     <label>Announcements:</label>
     <div class="values">
         <c:choose>
-            <c:when test="${empty announcements}">None</c:when>
+            <c:when test="${empty user.announcements}">None</c:when>
             <c:otherwise>
-                <c:forEach var="a" items="${announcements}">
+                <c:forEach var="a" items="${user.announcements}">
                     <div>${a}</div>
                 </c:forEach>
             </c:otherwise>
@@ -36,7 +36,7 @@
     </div>
 
     <label>Contact By:</label>
-    <span>${contactBy}</span><br>
+    <span>${user.contactBy}</span><br>
 
     <p>To enter another survey, click on the Back
        button in your browser or the Return button shown

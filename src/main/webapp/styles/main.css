@@ -1,3 +1,6 @@
+.logo {
+    text-align: center;
+}
 body {
     font-family: Arial, Helvetica, sans-serif;
     font-size: 11pt;
@@ -5,7 +8,7 @@ body {
     margin-right: 2em;
 }
 h1, h2 {
-    color: blue;
+    color: #fc8303;
 }
 label {
     float: left;
@@ -20,7 +23,7 @@ label {
 .values div {
     margin-bottom: 0.5em;
 }
-input[type="text"], input[type="email"] {
+input[type="text"], input[type="email"], input[type="date"] {
     width: 15em;
     margin-left: 0.5em;
     margin-bottom: 0.5em;

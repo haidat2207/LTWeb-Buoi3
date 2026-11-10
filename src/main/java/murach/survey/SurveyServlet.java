@@ -29,23 +29,18 @@ public class SurveyServlet extends HttpServlet {
         if (action.equals("join")) {
             url = "/index.html";
         } else if (action.equals("add")) {
-            String firstName = request.getParameter("firstName");
-            String lastName = request.getParameter("lastName");
-            String email = request.getParameter("email");
-            String dateOfBirth = request.getParameter("dateOfBirth");
-            String hearAboutUs = request.getParameter("hearAboutUs");
-            String[] announcements = request.getParameterValues("announcement"); // có thể null
-            String contactBy = request.getParameter("contactBy");
+            User user = new User(
+                    request.getParameter("firstName"),
+                    request.getParameter("lastName"),
+                    request.getParameter("email"),
+                    request.getParameter("dateOfBirth"),
+                    request.getParameter("hearAboutUs"),
+                    request.getParameterValues("announcement"),
+                    request.getParameter("contactBy"));
 
-            User user = new User(firstName, lastName, email);
-//            UserDB.insert(user);
+//    UserDB.insert(user);
 
             request.setAttribute("user", user);
-            request.setAttribute("dateOfBirth", dateOfBirth);
-            request.setAttribute("hearAboutUs", hearAboutUs);
-            request.setAttribute("announcements", announcements);
-            request.setAttribute("contactBy", contactBy);
-
             url = "/thanks.jsp";
         }
 
